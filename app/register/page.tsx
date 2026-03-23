@@ -1,5 +1,3 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import {
@@ -13,49 +11,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 
-
-
-import { useState } from "react"
-
-
 export default function LoginPage() {
-  const [email, setEmail] = useState("")
-  const [senha, setSenha] = useState("")
-  const [mensagem, setMensagem] = useState("")
-  
-
-  async function handleLogin() {
-  setMensagem("")
-
-  if (!email.includes("@")) {
-    setMensagem("Email inválido")
-    return
-  }
-
-  if (!senha) {
-    setMensagem("Digite sua senha")
-    return
-  }
-
-  try {
-    const resposta = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        senha,
-      }),
-    })
-
-    const texto = await resposta.text()
-    setMensagem(texto)
-  } catch (erro) {
-    console.error("Erro no login:", erro)
-    setMensagem("Erro ao conectar com o servidor")
-  }
-}
   return (
     <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10">
       <Card className="w-[550px]">
@@ -70,13 +26,8 @@ export default function LoginPage() {
             <p>Email</p>
             <div className = "flex w-full items-center gap-2 border rounded-md px-4">
               <i className = "bx bxs-user"></i>
-              <Input 
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Digite seu email" 
-                className="flex-1 border-0 shadow-none focus-visible:ring-0 bg-transparent"
+              <Input placeholder="Digite seu email" 
+              className="flex-1 border-0 shadow-none focus-visible:ring-0 bg-transparent"
               />
             </div>
           </div>
@@ -84,12 +35,7 @@ export default function LoginPage() {
             <p>Senha</p>
             <div className="flex w-full items-center gap-2 border rounded-md px-4">
               <i className = "bx bxs-lock-alt"></i>
-              <Input
-                type="password"
-                required
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
-                placeholder="Digite sua senha"
+              <Input placeholder="Digite seu fernando" type = "password" 
               className="flex-1 border-0 shadow-none focus-visible:ring-0"
               />
             </div>
@@ -103,10 +49,9 @@ export default function LoginPage() {
               Forgot my password
             </a>         
           </div>
-          <Button className="max-w-16" variant="default" onClick={handleLogin}>
+          <Button className="max-w-16" variant="default">
             Entrar
           </Button>
-          {mensagem && <p className="text-sm">{mensagem}</p>}
           <div className="register text-center text-sm">
             Não tem conta?{" "}
             <Link href="/register" className="text-blue-500 hover:underline">
