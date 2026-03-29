@@ -14,8 +14,11 @@ import {
 import { Input } from "@/components/ui/input"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function LoginPage() {
+  const router = useRouter()
+
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
   const [mensagem, setMensagem] = useState("")
@@ -45,6 +48,13 @@ export default function LoginPage() {
         }),
       })
 
+      // ✅ SE LOGIN DER CERTO
+      if (resposta.ok) {
+        window.location.href = "/dashboard/home" // ou "/dashboard/home"
+        return
+      }
+
+      // ❌ SE DER ERRO
       const texto = await resposta.text()
       setMensagem(texto)
     } catch (erro) {
@@ -64,7 +74,7 @@ export default function LoginPage() {
         <CardContent className="flex flex-col gap-3">
           <div className="flex w-full flex-col gap-0.5">
             <p>Email</p>
-            <div className="flex w-full items-center gap-2 rounded-md border px-4">
+            <div className="flex w-full items-center gap-2 rounded-md border pl-4">
               <i className="bx bxs-user"></i>
               <Input
                 type="email"
@@ -78,7 +88,7 @@ export default function LoginPage() {
           </div>
           <div className="flex w-full flex-col gap-0.5">
             <p>Senha</p>
-            <div className="flex w-full items-center gap-2 rounded-md border px-4">
+            <div className="flex w-full items-center gap-2 rounded-md border pl-4">
               <i className="bx bxs-lock-alt"></i>
               <Input
                 type="password"

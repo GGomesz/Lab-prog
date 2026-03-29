@@ -59,7 +59,7 @@ export default function RegisterPage() {
   }
   return (
     <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10">
-      <Card className="flex h-[400px] w-[550px]">
+      <Card className="flex h-[370px] w-[550px]">
         <CardHeader>
           <CardTitle>Criar conta</CardTitle>
           <CardDescription>Siga os passos para criar sua conta</CardDescription>
@@ -67,7 +67,7 @@ export default function RegisterPage() {
         <CardContent className="flex flex-col gap-3">
           <div className="flex w-full flex-col gap-0.5">
             <p>Email</p>
-            <div className="flex w-full items-center gap-2 rounded-md border px-4">
+            <div className="flex w-full items-center gap-2 rounded-md border pl-4">
               <i className="bx bxs-user"></i>
               <Input
                 type="email"
@@ -81,7 +81,7 @@ export default function RegisterPage() {
           </div>
           <div className="flex w-full flex-col gap-0.5">
             <p>Senha</p>
-            <div className="flex w-full items-center gap-2 rounded-md border px-4">
+            <div className="flex w-full items-center gap-2 rounded-md border pl-4">
               <i className="bx bxs-lock-alt"></i>
               <Input
                 type="password"
@@ -95,7 +95,7 @@ export default function RegisterPage() {
           </div>
           <div className="flex w-full flex-col gap-0.5">
             <p>Confirme sua senha</p>
-            <div className="flex w-full items-center gap-2 rounded-md border px-4">
+            <div className="flex w-full items-center gap-2 rounded-md border pl-4">
               <i className="bx bxs-lock-alt"></i>
               <Input
                 type="password"
@@ -108,7 +108,7 @@ export default function RegisterPage() {
             </div>
           </div>
           <Button
-            className="max-w-20"
+            className="max-w-24"
             variant="default"
             onClick={handleRegister}
           >
