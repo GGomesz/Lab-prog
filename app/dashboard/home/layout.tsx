@@ -35,7 +35,7 @@ export default async function RootLayout({
 
   return (
     <html
-      lang="en"
+      lang="pt-br"
       suppressHydrationWarning
       className={cn(
         "antialiased",
@@ -43,6 +43,7 @@ export default async function RootLayout({
         "font-sans",
         raleway.variable
       )}
+      style={{ backgroundColor: "#1f2937" }} // Garante o fundo no HTML
     >
       <head>
         <link
@@ -50,11 +51,13 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body style={{ backgroundColor: "#1f2937", margin: 0 }}>
         <ThemeProvider>
           <SidebarProvider>
             <AppSidebar user={user} />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 min-h-screen bg-[#1f2937]">
+              {children}
+            </main>
           </SidebarProvider>
         </ThemeProvider>
       </body>
