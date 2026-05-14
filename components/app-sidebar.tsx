@@ -27,30 +27,21 @@ const data = {
       items: [
         {
           title: "Ver calendário",
-          url: "/calendario",
-        },
-        {
-          title: "Eventos financeiros",
-          url: "/calendario/eventos",
+          url: "/dashboard/calendario",
         },
       ],
     },
     {
-      title: "Gastos",
+      title: "Tarefa",
       url: "#",
       items: [
         {
-          title: "Adicionar gasto",
-          url: "/gastos/adicionar",
+          title: "Adicionar tarefa",
+          url: "/dashboard/tarefa/adicionar",
         },
         {
-          title: "Visualizar gastos",
-          url: "/gastos",
-          isActive: true,
-        },
-        {
-          title: "Administrar gastos",
-          url: "/gastos/admin",
+          title: "Lista de tarefa",
+          url: "/dashboard/tarefa/lista",
         },
       ],
     },

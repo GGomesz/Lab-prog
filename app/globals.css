@@ -4,6 +4,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@import "tailwindcss";
+
+
 :root {
     --background: oklch(1 0 0);
     --foreground: oklch(0.141 0.005 285.823);
@@ -73,6 +76,8 @@
     --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+
+
 @theme inline {
     --font-sans: var(--font-sans);
     --color-sidebar-ring: var(--sidebar-ring);
@@ -125,4 +130,65 @@
   html {
     @apply font-sans;
     }
+}
+
+.fc {
+  background-color: #09090b !important;
+  color: white !important;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border-color: #27272a !important;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border-color: #27272a !important;
+}
+
+.fc-col-header-cell {
+  background-color: #18181b !important;
+  color: white !important;
+}
+
+.fc-daygrid-day {
+  background-color: #09090b !important;
+}
+
+.fc-daygrid-day-number {
+  color: white !important;
+}
+
+.fc-toolbar-title {
+  color: white !important;
+}
+
+.fc-button {
+  background-color: #2563eb !important;
+  border: none !important;
+  color: white !important;
+}
+
+.fc-button:hover {
+  background-color: #1d4ed8 !important;
+}
+
+.fc-day-today {
+  background-color: #27272a !important;
+}
+
+.fc-event {
+  background-color: #2563eb !important;
+  border: none !important;
+  color: white !important;
+  border-radius: 6px !important;
+  padding: 2px 4px !important;
+}
+
+.fc-list {
+  background-color: #09090b !important;
+}
+
+.fc-scrollgrid-section > * {
+  background-color: #09090b !important;
 }
