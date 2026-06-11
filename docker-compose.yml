@@ -1,0 +1,46 @@
+services:
+  database:
+    image: postgres:16-alpine
+    container_name: lab-prog-database
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: labprog
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U postgres -d labprog
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: lab-prog-app
+    restart: unless-stopped
+
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://postgres:postgres@database:5432/labprog?schema=public
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      database:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
