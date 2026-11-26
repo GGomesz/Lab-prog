@@ -1,5 +1,7 @@
 # Lab-prog
 
+Sistema web completo de uma agenda online.
+
 ## Tecnologias
 
 - **[Next.js 16](https://nextjs.org/)** (App Router, Turbopack) e **React 19**
@@ -10,11 +12,6 @@
 - **Autenticação:** `bcrypt` (hash de senhas), `jose` / `jsonwebtoken` (JWT) e `middleware.ts` para proteção de rotas
 - **ESLint** e **Prettier**
 
-## Funcionalidades
-
-- [ ] [Autenticação de usuários (login/cadastro)]
-- [ ] [Calendário de eventos/agendamentos]
-- [ ] [Liste as demais funcionalidades]
 
 ## Estrutura do projeto
 
@@ -88,10 +85,3 @@
 | `npm run format` | Formata os arquivos `.ts`/`.tsx` com Prettier |
 | `npm run typecheck` | Verifica os tipos com o TypeScript |
 
-## Autores
-
-- [@GGomesz](https://github.com/GGomesz)
-
-## Licença
-
-[Defina a licença do projeto, ex.: MIT.]
