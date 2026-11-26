@@ -1,7 +1,5 @@
 # Lab-prog
 
-[Descreva em 1 ou 2 frases o que o sistema faz e para quem é.]
-
 ## Tecnologias
 
 - **[Next.js 16](https://nextjs.org/)** (App Router, Turbopack) e **React 19**
